@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: g++.exe build active file's directory",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-Wall",
+                "-std=c++17",
+                // 关键改动(1): 不再指定目录，因为我们下面会用 cwd 切换过去
+                "*.cpp",
+                "-o",
+                // 关键改动(2): 输出路径也不再需要目录名
+                "${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                // 关键改动(3): 在运行命令前，先进入到当前激活文件所在的目录
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
