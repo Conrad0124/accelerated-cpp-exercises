@@ -30,5 +30,5 @@ std::cout&ensp;是**标准输出流**，是C++定义的一个facility用来输�
 2.**作用域**scope
 C++有不同种类的scope，目前遇到的其中两个分别是：namespace（例如qualified name std::cout）和 curly braces  
 3.**string literal**   
-string literal has a mysterious type that we shall not even discuss until ch 10.2.  
+string literal has a mysterious type that we shall not even discuss until &sect;10.2.  
 每个字符串字面量要整体地在一行出现。
