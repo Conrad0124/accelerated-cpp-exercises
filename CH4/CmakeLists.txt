@@ -1,0 +1,23 @@
+# 指定最低版本要求
+cmake_minimum_required(VERSION 3.10)
+# 定义项目名称和所使用的语言,CXX代表C++
+project(StudentGrades CXX)
+# 添加一个可执行文件目标-main,其后是所有需要被编译的源文件
+add_executable(main
+main3.cpp
+median.cpp
+grade.cpp
+Student_info.cpp
+)
+# 指定C++标准
+target_compile_features(main PUBLIC cxx_std_11)
+# $ build
+# cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug
+# cmake --build .
+# ------
+# 说明上方两个命令：
+# 第一条命令中的 .. 代表上一层目录，-DCMAKE_BUILD_TYPE=Debug代表
+# 自动加上-g标志，保留debug信息,生成Makefiles
+# -G选项：指定生成器，指定成MinGW的Makefiles做为生成器，不然
+# 在安装了VisualStudio的电脑中默认生成器是使用VS的。
+# 第二条命令中的 . 代表当前目录，生成.exe文件
